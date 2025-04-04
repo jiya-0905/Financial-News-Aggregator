@@ -3,6 +3,7 @@ const newsContainer = document.getElementById("news-container");
 const searchButton = document.getElementById("searchButton");
 const stockInput = document.getElementById("stockInput");
 
+// Fetch financial news
 defaultNews();
 
 function defaultNews() {
@@ -18,16 +19,17 @@ function fetchNews(query) {
         .catch(error => console.error("Error fetching news:", error));
 }
 
+// Function to analyze sentiment for each article
 function analyzeSentiment(articles) {
-    newsContainer.innerHTML = ""; 
+    newsContainer.innerHTML = ""; // Clear old news
 
     articles.slice(0, 10).forEach(article => {
-        const sentimentApiUrl = "http://financial-news-aggregator-pgmf.onrender.com/analyze"; 
+        const sentimentApiUrl = "https://financial-news-aggregator-pgmf.onrender.com/analyze"; // Flask API endpoint
         
         fetch(sentimentApiUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: article.title }) 
+            body: JSON.stringify({ text: article.title }) // Sending only the title for sentiment analysis
         })
         .then(response => response.json())
         .then(sentimentData => {
@@ -35,7 +37,7 @@ function analyzeSentiment(articles) {
         })
         .catch(error => {
             console.error("Error analyzing sentiment:", error);
-            displayNews(article, "Unknown"); 
+            displayNews(article, "Unknown"); // Fallback if API fails
         });
     });
 }
@@ -53,6 +55,8 @@ function displayNews(article, sentiment) {
     
     newsContainer.appendChild(newsCard);
 }
+
+// Search news by stock symbol
 searchButton.addEventListener("click", () => {
     const query = stockInput.value.trim();
     if (query) fetchNews(query);
