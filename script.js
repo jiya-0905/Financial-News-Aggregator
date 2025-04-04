@@ -22,7 +22,7 @@ function analyzeSentiment(articles) {
     newsContainer.innerHTML = ""; 
 
     articles.slice(0, 10).forEach(article => {
-        const sentimentApiUrl = "http://financial-news-aggregator-pgmf.onrender.com//analyze"; 
+        const sentimentApiUrl = "http://financial-news-aggregator-pgmf.onrender.com/analyze"; 
         
         fetch(sentimentApiUrl, {
             method: "POST",
