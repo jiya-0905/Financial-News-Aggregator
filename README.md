@@ -2,6 +2,8 @@
 
 A web application that fetches real-time financial news using the **NewsAPI**, and analyzes the sentiment (Bullish, Bearish, Neutral) of each headline using **VADER Sentiment Analysis** powered by a Flask backend.
 
+![image](https://github.com/user-attachments/assets/b31be702-5402-414c-bb3c-f5c8777636c9)
+
 ---
 
 ## 🔍 Features
