@@ -1,4 +1,5 @@
-const apiKey = '555c19f9f1914ac297fc64709e86b46a';
+require('dotenv').config();
+const apiKey = process.env.NEWS_API_KEY;
 const newsContainer = document.getElementById("news-container");
 const searchButton = document.getElementById("searchButton");
 const stockInput = document.getElementById("stockInput");
