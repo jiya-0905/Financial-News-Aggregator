@@ -4,6 +4,8 @@ A web application that fetches real-time financial news using the **NewsAPI**, a
 
 ---
 
+![Screenshot 2025-04-10 214425](https://github.com/user-attachments/assets/072bf4ef-f0cc-4dde-9f5a-bc226938ee36)
+
 ## 🔍 Features
 
 - 📰 Displays top financial news articles.
